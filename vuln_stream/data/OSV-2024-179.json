@@ -1,0 +1,41 @@
+{
+  "id": "OSV-2024-179",
+  "summary": "UNKNOWN READ in gs_font_finalize",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67377\n\n```\nCrash type: UNKNOWN READ\nCrash state:\ngs_font_finalize\nchunk_free_object\npdfi_free_font_type1\n```\n",
+  "modified": "2024-03-17T00:03:41.276072Z",
+  "published": "2024-03-17T00:03:41.275523Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67377"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "ghostscript",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/ghostscript"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "git://git.ghostscript.com/ghostpdl.git",
+          "events": [
+            {
+              "introduced": "7d3e88528a466ca81df4196db5322da9aab16667"
+            }
+          ]
+        }
+      ],
+      "ecosystem_specific": {
+        "severity": "MEDIUM"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ghostscript/OSV-2024-179.yaml"
+      },
+      "versions": []
+    }
+  ],
+  "schema_version": "1.6.0"
+}

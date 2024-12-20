@@ -1,0 +1,62 @@
+{
+  "id": "OSV-2022-867",
+  "summary": "Heap-buffer-overflow in get_utf_8_string",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51090\n\n```\nCrash type: Heap-buffer-overflow READ 1\nCrash state:\nget_utf_8_string\ndissect_form_urlencoded\ncall_dissector_work\n```\n",
+  "modified": "2024-02-15T14:58:32.926664Z",
+  "published": "2022-09-09T00:01:54.157712Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51090"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "wireshark",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/wireshark"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "https://gitlab.com/wireshark/wireshark.git",
+          "events": [
+            {
+              "introduced": "248ff020e7ea17785cc9451f6d24ad61c4310d1f"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "v4.1.0",
+        "v4.1.1rc0",
+        "v4.2.0rc0",
+        "v4.3.0rc0",
+        "v4.2.0rc1",
+        "v4.2.0rc2",
+        "wireshark-4.2.0rc2",
+        "v4.2.0rc3",
+        "v4.2.0",
+        "v4.2.1rc0",
+        "wireshark-4.2.0",
+        "v4.2.1",
+        "v4.2.2rc0",
+        "wireshark-4.2.1",
+        "v4.2.2",
+        "v4.2.3rc0",
+        "wireshark-4.2.2",
+        "v4.2.3",
+        "v4.2.4rc0",
+        "wireshark-4.2.3"
+      ],
+      "ecosystem_specific": {
+        "severity": "MEDIUM"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wireshark/OSV-2022-867.yaml"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

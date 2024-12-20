@@ -1,0 +1,47 @@
+{
+  "id": "OSV-2023-261",
+  "summary": "Heap-buffer-overflow in HtpRequestBodyHandleMultipart",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57578\n\n```\nCrash type: Heap-buffer-overflow READ 1\nCrash state:\nHtpRequestBodyHandleMultipart\nHTPCallbackRequestBodyData\nhtp_hook_run_all\n```\n",
+  "modified": "2024-02-08T14:08:21.044591Z",
+  "published": "2023-04-01T13:02:00.983076Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57578"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "suricata",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/suricata"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "https://github.com/OISF/suricata.git",
+          "events": [
+            {
+              "introduced": "578f328e06b3e03f3bdbbf852b5d121e20849b8b"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "suricata-7.0.0-rc2",
+        "suricata-7.0.0",
+        "suricata-7.0.1",
+        "suricata-7.0.2",
+        "suricata-7.0.3"
+      ],
+      "ecosystem_specific": {
+        "severity": "MEDIUM"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/suricata/OSV-2023-261.yaml"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "OSV-2022-1248",
+  "summary": "Object-size in wabt::BinaryReaderIR::OnCodeMetadataCount",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=54092\n\n```\nCrash type: Object-size\nCrash state:\nwabt::BinaryReaderIR::OnCodeMetadataCount\nwabt::BinaryReader::ReadCodeMetadataSection\nwabt::BinaryReader::ReadCustomSection\n```\n",
+  "modified": "2023-10-25T14:10:55.934063Z",
+  "published": "2022-12-08T13:00:53.255456Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=54092"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "wabt",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/wabt"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "https://github.com/WebAssembly/wabt",
+          "events": [
+            {
+              "introduced": "65ce49a6d307b101aa058da8269e1ccae43feeb9"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "1.0.30",
+        "1.0.31",
+        "1.0.32",
+        "1.0.33",
+        "1.0.34"
+      ],
+      "ecosystem_specific": {
+        "severity": "MEDIUM"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wabt/OSV-2022-1248.yaml"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

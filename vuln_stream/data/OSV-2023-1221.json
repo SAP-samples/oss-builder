@@ -1,0 +1,41 @@
+{
+  "id": "OSV-2023-1221",
+  "summary": "Security exception in jaz.Zer.reportFinding",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64488\n\n```\nCrash type: Security exception\nCrash state:\njaz.Zer.reportFinding\njaz.Zer.reportFindingIfEnabled\njaz.Zer.readObject\n```\n",
+  "modified": "2023-11-26T13:02:48.996167Z",
+  "published": "2023-11-26T13:02:48.995906Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64488"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "apache-commons-lang",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/apache-commons-lang"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "https://github.com/apache/commons-lang",
+          "events": [
+            {
+              "introduced": "7182f72061822cefade0a2169bc54ca51a1427e5"
+            }
+          ]
+        }
+      ],
+      "ecosystem_specific": {
+        "severity": "HIGH"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-commons-lang/OSV-2023-1221.yaml"
+      },
+      "versions": []
+    }
+  ],
+  "schema_version": "1.6.0"
+}

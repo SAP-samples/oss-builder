@@ -1,0 +1,49 @@
+{
+  "id": "OSV-2023-736",
+  "summary": "Heap-buffer-overflow in HeifContext::interpret_heif_file",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61718\n\n```\nCrash type: Heap-buffer-overflow READ 4\nCrash state:\nHeifContext::interpret_heif_file\nHeifContext::read_from_memory\nheif_context_read_from_memory\n```\n",
+  "modified": "2023-12-20T14:12:01.243209Z",
+  "published": "2023-08-25T14:00:14.487219Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61718"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "libheif",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/libheif"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "https://github.com/strukturag/libheif.git",
+          "events": [
+            {
+              "introduced": "6fb8e4cd53619e547be0045ad1615aa429b7f336"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "v1.17.0",
+        "v1.17.1",
+        "v1.17.2",
+        "v1.17.3",
+        "v1.17.4",
+        "v1.17.5",
+        "v1.17.6"
+      ],
+      "ecosystem_specific": {
+        "severity": "MEDIUM"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libheif/OSV-2023-736.yaml"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

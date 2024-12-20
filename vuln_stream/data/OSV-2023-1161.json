@@ -1,0 +1,47 @@
+{
+  "id": "OSV-2023-1161",
+  "summary": "Heap-buffer-overflow in std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<ch",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64151\n\n```\nCrash type: Heap-buffer-overflow READ {*}\nCrash state:\nstd::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<ch\nExiv2::QuickTimeVideo::NikonTagsDecoder\nExiv2::QuickTimeVideo::userDataDecoder\n```\n",
+  "modified": "2024-02-14T14:07:38.524497Z",
+  "published": "2023-11-14T13:03:13.962614Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64151"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "exiv2",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/exiv2"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "https://github.com/Exiv2/exiv2",
+          "events": [
+            {
+              "introduced": "393815ffb09ff68ec704a60439b26d186979402d"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "nightly",
+        "v0.28.0",
+        "v0.28.1",
+        "nightly-0.28.x",
+        "v0.28.2"
+      ],
+      "ecosystem_specific": {
+        "severity": "MEDIUM"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/exiv2/OSV-2023-1161.yaml"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

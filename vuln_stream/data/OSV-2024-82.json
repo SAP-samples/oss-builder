@@ -1,0 +1,41 @@
+{
+  "id": "OSV-2024-82",
+  "summary": "Heap-use-after-free in xmlValidatePopElement",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66154\n\n```\nCrash type: Heap-use-after-free READ 8\nCrash state:\nxmlValidatePopElement\nxmlTextReaderValidatePop\nxmlTextReaderRead\n```\n",
+  "modified": "2024-02-08T00:02:35.343044Z",
+  "published": "2024-02-08T00:02:35.342535Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66154"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "libxml2",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/libxml2"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "https://gitlab.gnome.org/GNOME/libxml2.git",
+          "events": [
+            {
+              "introduced": "f3fa34dcad6fbfaadb5c68d67315149e6c652a93"
+            }
+          ]
+        }
+      ],
+      "ecosystem_specific": {
+        "severity": "HIGH"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libxml2/OSV-2024-82.yaml"
+      },
+      "versions": []
+    }
+  ],
+  "schema_version": "1.6.0"
+}

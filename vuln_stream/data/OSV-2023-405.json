@@ -1,0 +1,46 @@
+{
+  "id": "OSV-2023-405",
+  "summary": "Heap-buffer-overflow in _lou_stringHash",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59057\n\n```\nCrash type: Heap-buffer-overflow READ 2\nCrash state:\n_lou_stringHash\n_lou_translate\nlou_translateString\n```\n",
+  "modified": "2024-03-05T14:18:07.928765Z",
+  "published": "2023-05-19T14:00:18.190498Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59057"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "liblouis",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/liblouis"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "https://github.com/liblouis/liblouis",
+          "events": [
+            {
+              "introduced": "bd2f5364d74bdc86af7a13fc690138c453c321de"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "v3.26.0",
+        "v3.27.0",
+        "v3.28.0",
+        "v3.29.0"
+      ],
+      "ecosystem_specific": {
+        "severity": "MEDIUM"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/liblouis/OSV-2023-405.yaml"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

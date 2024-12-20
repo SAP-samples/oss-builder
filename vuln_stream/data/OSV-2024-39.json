@@ -1,0 +1,49 @@
+{
+  "id": "OSV-2024-39",
+  "summary": "Heap-buffer-overflow in simdutf::westmere::implementation::convert_utf8_to_utf32",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66063\n\n```\nCrash type: Heap-buffer-overflow WRITE 16\nCrash state:\nsimdutf::westmere::implementation::convert_utf8_to_utf32\nroundtrip.cc\n```\n",
+  "modified": "2024-03-19T14:21:22.619045Z",
+  "published": "2024-01-25T00:05:37.689031Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66063"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "simdutf",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/simdutf"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "https://github.com/simdutf/simdutf",
+          "events": [
+            {
+              "introduced": "59b81c798c0c88ca4c573ebde77c3b38eb0352cb"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "v4.0.4",
+        "v4.0.5",
+        "v4.0.6",
+        "v4.0.7",
+        "v4.0.8",
+        "v4.0.9",
+        "v5.0.0"
+      ],
+      "ecosystem_specific": {
+        "severity": "HIGH"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/simdutf/OSV-2024-39.yaml"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

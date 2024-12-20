@@ -1,0 +1,44 @@
+{
+  "id": "OSV-2024-151",
+  "summary": "Heap-buffer-overflow in od_ec_dec_normalize",
+  "details": "OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67216\n\n```\nCrash type: Heap-buffer-overflow READ 1\nCrash state:\nod_ec_dec_normalize\nav1_decode_palette_tokens\nav1_visit_palette\n```\n",
+  "modified": "2024-03-14T14:27:12.137483Z",
+  "published": "2024-03-07T00:04:15.146851Z",
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67216"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "libaom",
+        "ecosystem": "OSS-Fuzz",
+        "purl": "pkg:generic/libaom"
+      },
+      "ranges": [
+        {
+          "type": "GIT",
+          "repo": "https://aomedia.googlesource.com/aom",
+          "events": [
+            {
+              "introduced": "8db7d7893078a12e89cfdae35b25da97a933ab0b"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "v3.8.2",
+        "v3.8.2-rc1"
+      ],
+      "ecosystem_specific": {
+        "severity": "MEDIUM"
+      },
+      "database_specific": {
+        "source": "https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libaom/OSV-2024-151.yaml"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

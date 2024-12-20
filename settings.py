@@ -1,0 +1,1 @@
+query_home = '/absolute/path/to/vscode-codeql-starter/codeql-custom-queries-cpp'
