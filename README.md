@@ -1,41 +1,28 @@
-# SAP-samples/repository-template
-This default template for SAP Samples repositories includes files for README, LICENSE, and .reuse/dep5. All repositories on github.com/SAP-samples will be created based on this template.
+# OSS-Builder
 
-# Containing Files
+This repository contains the source code for our tool OSS-Builder, that builds a training dataset for learning-based vulnerability discovery based on [OSS-fuzz](https://github.com/google/oss-fuzz). It uses CodeQL to find the changed function before and after a fix and annotates the function with extra context from the repository, such as the values of known constants, possibly attacker-controlled parameters and many more.
 
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
+## Usage
 
-2. The .reuse/dep5 file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the .reuse/dep5 in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
+### Requirements
+- Python >= 3.10
+- Pip packages listed in `requirements.txt`
+- CodeQL CLI (needs to be on PATH)
+- CodeQL (make sure to update `settings.py` with the correct _absolute_ path to the starter workspace)
 
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
+### Preparation
+If `vuln_stream/data` is not yet filled with data, follow the instructions under `vuln_stream/README.md`.
 
-# [Title]
-<!-- Please include descriptive title -->
+### Generating data
+Please first test the correct installation using `query.py`
 
-<!--- Register repository https://api.reuse.software/register, then add REUSE badge:
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
--->
+> python query.py
 
-## Description
-<!-- Please include SEO-friendly description -->
+It should result in two files, `result/1.c` and `result/2.c`. The first file should contain only a single unannotated function, while the second file should contain an annotated function and possibly more relevant functions. If any issues occur during this step, check your installation before proceeding.
 
-## Requirements
+Next, you can run the full pipeline
 
-## Download and Installation
-
-## Known Issues
-<!-- You may simply state "No known issues. -->
-
-## How to obtain support
-[Create an issue](https://github.com/SAP-samples/<repository-name>/issues) in this repository if you find a bug or have questions about the content.
- 
-For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
-
-## Contributing
-If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
+> python main.py
 
 ## License
-Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
